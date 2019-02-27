@@ -68,7 +68,7 @@ const updateDocuments = (assertions) => {
     if (!ruleAssertions) {
       throw new Error('No assertions available for rule "' + ruleName + '".');
 
-      return assertionsBlock;
+      //return assertionsBlock;
     }
 
     exampleBody = '';
