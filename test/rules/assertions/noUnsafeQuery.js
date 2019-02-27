@@ -54,6 +54,18 @@ export default {
     },
     {
       code: 'sql`SELECT ${\'foo\'}`'
+    },
+    {
+      code: 'sql`# comment line\nSELECT ?item ?_i WHERE { ?item wdt:P2044 ?alt. FILTER (?alt > 3000 || ?alt < -3000). } ORDER BY ?alt`'
+    },
+    {
+      code: 'sparql`SELECT 10`'
+    },
+    {
+      code: 'sparql`SELECT ?item WHERE { ?item p:P19/a wdno:P19 ; wdt:P31 wd:Q5 } LIMIT 100`'
+    },
+    {
+      code: 'sparql`SELECT ?item { ?item wdt:P3814 [] }`'
     }
   ]
 };

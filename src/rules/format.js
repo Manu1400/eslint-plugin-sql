@@ -19,7 +19,7 @@ export default (context) => {
 
   return {
     TemplateLiteral (node) {
-      const sqlTagIsPresent = node.parent.tag && node.parent.tag.name === 'sql';
+      const sqlTagIsPresent = node.parent.tag && (node.parent.tag.name === 'sql' || node.parent.tag.name === 'sparql');
 
       if (ignoreTagless && !sqlTagIsPresent) {
         return;
@@ -53,6 +53,7 @@ export default (context) => {
             let final = formatted;
 
             const expressionCount = node.expressions.length;
+
             let index = 0;
 
             while (index <= expressionCount - 1) {
